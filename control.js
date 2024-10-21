@@ -1,5 +1,5 @@
  function sendCommand(command) {
-     fetch(`http://192.168.1.102/control?cmd=${command}`)
+     fetch(`http://192.168.1.102//arduino_car/control.html?cmd=${command}`)
          .then(response => response.text())
          .then(data => console.log(data))
          .catch(error => console.error('Error:', error));
@@ -7,7 +7,7 @@
 
 
 function sendCommand(command) {
-    fetch(`http://192.168.1.103/control?cmd=${command}`)
+    fetch(`http://192.168.1.103//arduino_car/control.html?cmd=${command}`)
         .then(response => response.text())
         .then(data => console.log(data))
         .catch(error => console.error('Error:', error));
