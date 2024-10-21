@@ -1,5 +1,5 @@
 function sendCommand(command) {
-    fetch(`http://192.168.1.102/control?cmd=${command}`, {
+    fetch(`http://192.168.1.102//arduino_car/control?cmd=${command}`, {
         method: 'GET',
         mode: 'cors', // تمكين CORS
     })
@@ -14,7 +14,7 @@ function sendCommand(command) {
 }
 
 function sendCommand(command) {
-    fetch(`http://192.168.1.103/control?cmd=${command}`, {
+    fetch(`http://192.168.1.103//arduino_car/control?cmd=${command}`, {
         method: 'GET',
         mode: 'cors', // تمكين CORS
     })
