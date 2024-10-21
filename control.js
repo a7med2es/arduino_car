@@ -1,5 +1,20 @@
 function sendCommand(command) {
-    fetch(`http://192.168.1.102/arduino_car/control?cmd=${command}`, {
+    fetch(`http://192.168.1.102/control?cmd=${command}`, {
+        method: 'GET',
+        mode: 'cors', // تمكين CORS
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.text();
+    })
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+}
+
+function sendCommand(command) {
+    fetch(`http://192.168.1.103/control?cmd=${command}`, {
         method: 'GET',
         mode: 'cors', // تمكين CORS
     })
@@ -17,9 +32,8 @@ function sendCommand(command) {
 
 
 
-
 function sendCommand(command) {
-     fetch(`http://192.168.1.102//arduino_car/control?cmd=${command}`)
+     fetch(`http://192.168.1.102//control?cmd=${command}`)
          .then(response => response.text())
          .then(data => console.log(data))
          .catch(error => console.error('Error:', error));
@@ -27,7 +41,7 @@ function sendCommand(command) {
 
 
 function sendCommand(command) {
-    fetch(`http://192.168.1.103//arduino_car/control?cmd=${command}`)
+    fetch(`http://192.168.1.103//control?cmd=${command}`)
         .then(response => response.text())
         .then(data => console.log(data))
         .catch(error => console.error('Error:', error));
