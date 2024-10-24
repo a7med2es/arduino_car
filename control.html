@@ -315,7 +315,10 @@
             <hr color="black" width="100%">
             <br>
 
-            <h1>Control Smart Car</h1>
+           <h1>Control Smart Car</h1>
+            <label for="ipAddress">أدخل عنوان IP:</label>
+            <input type="text" id="ipAddress" value="192.168.1.103">
+
             <div class="controls">
                 <div class="control-row">
                     <button onclick="sendCommand('backward')">↑</button>
@@ -330,12 +333,11 @@
                 </div>
 
                 <hr color="black" width="100%">
-                <br>
-                <h1>auto drive</h1>
+
+                <h1>قيادة آلية</h1>
                 <div class="autodrive">
                     <button id="autoButton" onclick="toggleAuto()">Start Auto</button>
                 </div>
-
             </div>
         </section>
     </div>
