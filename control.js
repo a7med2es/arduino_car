@@ -1,9 +1,8 @@
-
 function sendCommand(command) {
     const ipAddress = document.getElementById('ipAddress').value;
 
     if (ipAddress) {
-        fetch(`https://${ipAddress}/control?cmd=${command}`)
+        fetch(`http://${ipAddress}/control?cmd=${command}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);
@@ -12,7 +11,6 @@ function sendCommand(command) {
             })
             .then(data => {
                 console.log(data);
-                alert('تم إرسال الأمر: ' + command);
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -28,7 +26,7 @@ function toggleAuto() {
     const command = document.getElementById('autoButton').innerText === "Start Auto" ? "startAuto" : "stopAuto";
 
     if (ipAddress) {
-        fetch(`https://${ipAddress}/control?cmd=${command}`)
+        fetch(`http://${ipAddress}/control?cmd=${command}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok ' + response.statusText);
@@ -45,19 +43,5 @@ function toggleAuto() {
             });
     } else {
         alert('يرجى التأكد من إدخال عنوان IP');
-    }
-}
-
-
-
-
-function toggleAuto() {
-    const autoButton = document.getElementById('autoButton');
-    if (autoButton.innerText === 'Start Auto') {
-        autoButton.innerText = 'Stop Auto';
-        sendCommand('auto');
-    } else {
-        autoButton.innerText = 'Start Auto';
-        sendCommand('stop');
     }
 }
